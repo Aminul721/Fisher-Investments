@@ -1,0 +1,280 @@
+/* Global Styles */
+.isInFullScreen {
+	position: fixed !important;
+	top: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	bottom: 0 !important;
+	width: 100% !important;
+	height: 100% !important;
+	margin: auto !important;
+	z-index: 10000 !important;
+}
+
+.mSCaption {
+	position: absolute;
+	-webkit-transform: translateZ(0);
+	   -moz-transform: translateZ(0);
+	    -ms-transform: translateZ(0);
+			transform: translateZ(0);
+}
+
+.mSCaption.mSMedia {
+	z-index: 100000;
+}
+
+.mightySlider,
+.mightySlider *,
+.mightySlider *:before,
+.mightySlider *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.mSCoverImage,
+.mSLayerCoverImage {
+	max-width: none;
+}
+
+.mSCover,
+.mSLayerCover {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-position: 50%;
+	background-repeat: no-repeat;
+	border-radius:5px;
+}
+
+.mSLayerCoverImage {
+	width: 100%;
+	height: 100%;
+}
+
+.mSLayerContainer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: #000;
+}
+
+.mSSlide {
+	position: relative;
+}
+
+.mSIcon {
+	display: block;
+	position: absolute;
+	background-color: rgba(0,0,0,0);
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1000;
+}
+
+.mSLoader ~ .mSIcon {
+	display: none !important;
+}
+
+.mightySlider .mSClose {
+	width: 22px;
+	height: 22px;
+	background: no-repeat center url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAbJJREFUeNrk2b1ugzAQAGAckf4oE2mz5B2aN+rQp0CiL9qhEuwdOlYlkcgdAuq02Dnbh+FUSyciTOALsY3xqeSnpBC3EN8QpyRSaZrGWKeUWsPmBqKG447tvq4OK3basV8Qn3OBAYqbLcSdtvsD0SsdW5blc57nD/DxHiKjXjAkbNiiKB6rqnrpqnZQh60g2UDsoeIVTtDUdf0G6CfcR0GHgkfwiN0D9oAWNMGNzDvPpm8OFwe4oJmx2RVLavxVVDQ3Fq9pMvxuQl7oWFhTB91SvsgMJmNNQ2Dmgo6JtY3ZZHRMrA3sfcIpsdfA5J4bC0sBs6I5/jVqCUZzNTGX4o3m7A+uxRnN3Xl9Chk9xUjjWygQ9hEmBExBs2NDwVb0FFgOsAn9jsGNZQGPdK4W2sM5sRir5B8WUU1CVKcTNayJenCIejSLmvyIml6KmsCLekUS9RIq6jVf1EKKqKUqJ+zci4HO2DmXW72wcy1op77YqVIGFst6SMpg4mMhSZk/aEwY6UmZtJ+/YoULlhs8htYySO0dXnJiMevyhReJRaXtGNKkEMeFpG6HdDIc16aTzwIMAHF0+z5nKTeiAAAAAElFTkSuQmCC');
+	background-size: 22px 22px;
+	cursor: pointer;
+	top: 20px;
+	right: 20px;
+	left: auto;
+	bottom: auto;
+	opacity: 0;
+
+	-webkit-transition: all 135ms linear;
+	transition: all 135ms linear;
+}
+
+.mightySlider:hover .mSClose {
+	opacity: 1;
+}
+
+.mightySlider.isTouch .mSClose {
+	position: relative !important;
+	margin-top: -26px;
+	width: 100% !important;
+	height: 26px !important;
+	background-color: #000;
+	text-align: center;
+	top: auto;
+	right: auto;
+}
+
+.mightySlider.isTouch .mSClose:after {
+	content: '\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0 CLOSE';
+	color: #FFF;
+	font-size: 14px;
+	line-height: 26px;
+}
+
+.mightySlider.isTouch.mSMedia .mSSlide,
+.mightySlider.isTouch .mSMedia.mSCaption .mSLayerContainer {
+	padding-top: 26px;
+}
+
+#mightyslider {
+	position: relative;
+	overflow: hidden;
+	background: transparent;
+}
+#mightyslider .frame {
+	position: relative;
+	width: 100%;
+	padding: 20px 0;
+	padding-bottom: 60px;
+	-webkit-perspective: 1000px;
+	perspective: 1000px;
+	-webkit-perspective-origin: 50% 50%;
+	perspective-origin: 50% 50%;
+}
+#mightyslider .frame .slide_element {
+	height: 100%;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+#mightyslider .frame .slide_element .slide {
+	float: left;
+	height: 100%;
+	margin-right: 20px;
+	opacity: 0.6;
+	z-index: 9;
+	border-radius: 5px;
+	-webkit-transform: translateZ(-150px);
+	transform: translateZ(-150px);
+	-webkit-transition: -webkit-transform 1s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+	-webkit-transition-property: opacity, -webkit-transform;
+	transition: transform 1s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+	transition-property: opacity, transform;
+}
+#mightyslider .frame .slide_element .slide.active {
+	opacity: 1;
+	z-index: 10;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+}
+.ie #mightyslider .frame .slide_element .slide {
+	margin-right: -70px;
+	transform: scale(0.85);
+}
+.ie #mightyslider .frame .slide_element .slide.active {
+	transform: scale(1);
+}
+#mightyslider .details {
+	display: block;
+	text-align: center;
+	padding: 20px;
+	padding-top: 0;
+	opacity: 0;
+	margin-top: -20px;
+}
+#mightyslider .details h3 {
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: 400;
+	color:#7e7e7e;
+	font-style:italic;
+	margin: 0;
+}
+#mightyslider .details h4#photographer {
+	text-transform: uppercase;
+	color: #7A7A7A;
+}
+#mightyslider .details #description {
+	color: #3D3D3D;
+}
+#mightyslider .mSButtons.mSPrev, 
+#mightyslider .mSButtons.mSNext {
+	width:31px;
+	height:31px;
+	background:url(../images/bgr_next.png) no-repeat;
+	position:absolute;
+	z-index:5;
+	bottom:0;
+	opacity:0.6;
+}
+#mightyslider .mSButtons.mSPrev:hover, 
+#mightyslider .mSButtons.mSNext:hover {opacity:1;}
+.mSButtons-wrap {
+	position:relative;
+	max-width:200px;
+	margin:0 auto;
+	padding-bottom:52px;
+}
+#mightyslider .mSButtons.mSPrev {
+	left: 0;
+	right: auto;
+	background:url(../images/bgr_prev.png) no-repeat;
+}
+#mightyslider .mSButtons.mSNext {
+	right:0;
+	left: auto;
+	background:url(../images/bgr_next.png) no-repeat;
+}
+#mightyslider.isTouch .mSButtons {
+	display: block;
+}
+#mightyslider .mSCaption {
+	left: 20px;
+	bottom: 40px;
+	font-size: 18px;
+	line-height: normal;
+	font-weight: 300;
+	color: #000;
+	opacity: 0;
+	letter-spacing: -1px;
+	white-space: nowrap;
+	text-transform: uppercase;
+	z-index: 1002;
+
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+#mightyslider .mSCaption.showed {
+	bottom: 20px;
+	opacity: 1;
+}
+ul.mSPages {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+	display:flex;
+	flex-wrap:nowrap;
+	justify-content:center;
+	width: 130px;
+    margin: 0 auto;
+    margin-top: -20px;
+	position:relative;
+	z-index:5;
+}
+ul.mSPages li {
+    cursor: pointer;
+	color:#000;
+	text-indent:-9999px;
+	width:11px;
+	height:11px;
+	border:1px #ff6c42 solid;
+	border-radius:50%;
+	margin:0 7px;
+}
+ul.mSPages li.active {
+	background-color:#ff6c42;
+}
+/* Responsive */
+@media (max-width: 480px) {
+	#mightyslider .frame .slide_element .slide {
+		margin-right: 0;
+	}
+	.ie #mightyslider .frame .slide_element .slide {
+		margin-right: -40px;
+	}
+}
